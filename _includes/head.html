@@ -6,7 +6,7 @@
 	<title>{{ site.title | escape }}{% if page.title %}—{{ page.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ "/public/css/site.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/public/css/site.css" | prepend: site.baseurl }}">
 	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i">
 	<noscript>
 	<link rel="stylesheet" href="{{ "/public/css/site.css" | prepend: site.baseurl }}">
