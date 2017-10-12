@@ -36,7 +36,10 @@ request('https://english.tamu.edu/directory/faculty/', (error, response, html) =
 
     const localname = path.join(
       __dirname,
+      '..',
+      'public',
       'images',
+      'faculty',
       `${key(name)}${path.extname(src)}`
     );
     fs.exists(localname, (exists) => {
@@ -51,7 +54,9 @@ request('https://english.tamu.edu/directory/faculty/', (error, response, html) =
       const $ = cheerio.load(html);
       const filePath = path.join(
         __dirname,
-        'data',
+        '..',
+        '_data',
+        'faculty',
         `${key(name)}.yml`
       );
       const output = {
