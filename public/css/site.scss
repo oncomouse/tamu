@@ -40,15 +40,6 @@
 }
 // Page Appearance
 // ================================================================
-main a,
-footer a {
-  &:visited {
-    color: $link;
-  }
-  &:hover {
-    color: $link--hover;
-  }
-}
 span.indent {
   padding-left: 30px;
 }
