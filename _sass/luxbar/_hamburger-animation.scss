@@ -1,0 +1,29 @@
+.#{$luxbar-css-prefix}__checkbox {
+    &:checked {
+        + .#{$luxbar-css-prefix}__menu {
+            .#{$luxbar-css-prefix}__hamburger--doublespin {
+                span {
+                    &::before {
+                        transform: rotate(225deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-225deg);
+                    }
+                }
+            }
+
+            .#{$luxbar-css-prefix}__hamburger--spin {
+                span {
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

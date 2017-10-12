@@ -1,0 +1,11 @@
+$base-font: "Roboto", sans-serif;
+$font-weight-base: 400;
+$font-weight-strong: 700;
+//$luxbar-transition: none;
+$maroon-bg: #500000;
+$maroon-fg: #FFF;
+$maroon-hl: lighten($maroon-bg, 10%);
+$primary: $maroon-bg;
+$primary-dark: darken($primary, 2%);
+//$font-size: 1rem;
+//$line-height: 1.25rem;

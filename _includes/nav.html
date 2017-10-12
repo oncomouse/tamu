@@ -1,0 +1,18 @@
+<div class="luxbar luxbar--fixed">
+	<input type="checkbox" id="luxbar__checkbox" class="luxbar__checkbox">
+	<nav id="luxbar__menu" class="luxbar__menu luxbar__menu--right luxbar__menu--maroon">
+		<ul class="luxbar__navigation">
+				<li class="luxbar__header">
+					<a href="/" class="luxbar__brand">Texas A&amp;M English</a>
+					<label id="luxbar__hamburger" class="luxbar__hamburger luxbar__hamburger--doublespin" for="luxbar__checkbox"><span></span></label>
+				</li>
+				{% for node in site.pages %}
+						{%capture extension%}{{node.url | split: "." | last}}{%endcapture%}
+						{%if node.layout == "page" %}
+							<li class="luxbar__item{% if page.url == node.url%} active{%endif%}"><a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a></li>
+						{%endif%}
+	      {% endfor %}
+				<li class="luxbar__item{% if "/" == page.url%} active{%endif%}"><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+		</ul>
+	</nav>
+</div>

@@ -1,0 +1,22 @@
+{%if page.url == "/faculty.html" %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>
+<script>
+(function(Isotope) {
+  document.addEventListener('DOMContentLoaded', function() {
+    var elem = document.querySelector('.faculty');
+    var iso = new Isotope(elem, {
+      itemSelector: '.box',
+      layoutMode: 'fitRows'
+    });
+    document.querySelector('#isotope-filter').addEventListener('change', function(ev) {
+      iso.arrange({
+        filter: ev.target.value
+      });
+    });
+    window.addEventListener('resize', function() {
+      iso.arrange();
+    })
+  });
+})(Isotope);
+</script>
+{% endif %}

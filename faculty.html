@@ -1,0 +1,51 @@
+---
+title: Our Faculty
+layout: page
+---
+<section class="wrapper-large banner">
+  <h1 class="ta-center">Our Faculty</h1>
+  <section class="wrapper-small">
+    <p class="splash">
+      Our faculty are leaders in their fields. They have won numerous major fellowships. They publish widely and frequently. They bring their trailblazing research to the graduate and undergraduate classroom.
+    </p>
+  </section>
+</section>
+<section class="wrapper-small">
+  <div class="ta-center">
+    <form class="isotope-form">
+      <label class="select">
+        <span class="select__label">Read More About Our Faculty &amp; Sort by Specialization:</span>
+        <select id="isotope-filter">
+          <option value="*">
+            View All
+          </option>
+          {% for spec in site.data.faculty-specializations.specializations %}
+            <option value=".{% assign fc = spec | split: "" | first | abs %}{%if fc > 0 and fc < 10%}c{%endif%}{{spec | downcase | replace: " ", "-" | replace: "/", "-" | replace: ",", "" }}">
+              {{spec}}
+            </option>
+          {% endfor %}
+        </select>
+      </label>
+    </form>
+  </div>
+</section>
+<section class="wrapper faculty">
+  {% for faculty_hash in site.data.faculty %}
+    {% assign key = faculty_hash[0] %}
+    {% assign faculty = faculty_hash[1] %}
+    <div id="{{key}}" class="box ta-center{%for spec in faculty.specializations%} {% assign fc = spec | split: "" | first | abs %}{%if fc > 0 and fc < 10%}c{%endif%}{{spec | downcase | replace: " ", "-" | replace: "/", "-" | replace: ",", "" }}{%endfor%}">
+      <h2 class="box__title">
+        {{faculty.name.given}} {{faculty.name.family}}
+      </h2>
+      <p>
+        <img src="{{site.baseurl}}/public/images/faculty/{{key}}.jpg" width="150" height="150">
+      </p>
+      <p>
+        <a href="mailto:{{faculty.email}}">Contact</a>
+      </p>
+      <p>
+        <a href="{{faculty.url}}">Dr. {{faculty.name.family}}'s Webpage</a>
+      </p>
+    </div>
+  {% endfor %}
+</section>

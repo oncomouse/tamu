@@ -1,0 +1,54 @@
+@media screen and (min-width: $luxbar-breakpoint) {
+    .#{$luxbar-css-prefix}__navigation {
+        flex-flow: row;
+        justify-content: flex-end;
+    }
+
+    .#{$luxbar-css-prefix}__hamburger {
+        display: none;
+    }
+
+    .#{$luxbar-css-prefix}__checkbox {
+        &:not(:checked) ~.#{$luxbar-css-prefix}__menu {
+            overflow: visible;
+        }
+
+        &:checked ~.#{$luxbar-css-prefix}__menu {
+          height: $luxbar-height;
+        }
+    }
+
+    .#{$luxbar-css-prefix}__menu {
+        .#{$luxbar-css-prefix}__item {
+            border-top: 0;
+        }
+
+    }
+
+    .#{$luxbar-css-prefix}__menu--right .#{$luxbar-css-prefix}__header {
+        margin-right: auto;
+    }
+
+    .dropdown {
+        height: $luxbar-height;
+
+        &:hover > ul {
+            position: absolute;
+            left: 0;
+            top: $luxbar-height;
+            padding: 0;
+        }
+
+        > ul {
+            display: none;
+
+            .#{$luxbar-css-prefix}__item {
+                padding: 5px 10px;
+
+                a {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

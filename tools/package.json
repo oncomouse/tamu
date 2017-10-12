@@ -1,0 +1,20 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "scrape": "babel-node scrape.js",
+    "specializations": "babel-node specializations.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "cheerio": "^1.0.0-rc.2",
+    "glob": "^7.1.2",
+    "js-yaml": "^3.10.0",
+    "ramda": "^0.25.0",
+    "request": "^2.83.0"
+  }
+}
