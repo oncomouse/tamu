@@ -30,17 +30,9 @@ layout: page
   </div>
 </section>
 <section class="wrapper faculty">
-  {%comment%}
-    Guarentee faculty will be alphabetized.
-  {%endcomment%}
-  {%assign faculty_order = "" | split: ""%}
   {% for faculty_hash in site.data.faculty %}
     {% assign key = faculty_hash[0] %}
-    {% assign faculty_order = faculty_order | push: key %}
-  {%endfor%}
-  {%assign faculty_order = faculty_order | sortNatural %}
-  {% for key in faculty_order %}
-    {% assign faculty = site.data.faculty[key] %}
+    {% assign faculty = faculty_hash[1] %}
     <div id="{{key}}" class="box ta-center{%for spec in faculty.specializations%} {% assign fc = spec | split: "" | first | abs %}{%if fc > 0 and fc < 10%}c{%endif%}{{spec | downcase | replace: " ", "-" | replace: "/", "-" | replace: ",", "" }}{%endfor%}">
       <h2 class="box__title">
         {{faculty.name.given}} {{faculty.name.family}}
