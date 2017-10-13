@@ -6,7 +6,11 @@
     var elem = document.querySelector('.faculty');
     var iso = new Isotope(elem, {
       itemSelector: '.box',
-      layoutMode: 'fitRows'
+      layoutMode: 'fitRows',
+      getSortData: {
+        'key': '[id]'
+      },
+      sortBy: 'key'
     });
     document.querySelector('#isotope-filter').addEventListener('change', function(ev) {
       iso.arrange({
