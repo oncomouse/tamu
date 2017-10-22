@@ -11,23 +11,21 @@ layout: page
   </section>
 </section>
 <section class="wrapper-small">
-  <div class="ta-center">
-    <form class="isotope-form">
-      <label class="select">
-        <span class="select__label">Read More About Our Faculty &amp; Sort by Specialization:</span>
-        <select id="isotope-filter">
-          <option value="*">
-            View All
+  <form class="isotope-form ta-center">
+    <label class="select">
+      <span class="select__label">Read More About Our Faculty &amp; Sort by Specialization:</span>
+      <select id="isotope-filter">
+        <option value="*">
+          View All
+        </option>
+        {% for spec in site.data.faculty-specializations.specializations %}
+          <option value=".{% assign fc = spec | split: "" | first | abs %}{%if fc > 0 and fc < 10%}c{%endif%}{{spec | downcase | replace: " ", "-" | replace: "/", "-" | replace: ",", "" }}">
+            {{spec}}
           </option>
-          {% for spec in site.data.faculty-specializations.specializations %}
-            <option value=".{% assign fc = spec | split: "" | first | abs %}{%if fc > 0 and fc < 10%}c{%endif%}{{spec | downcase | replace: " ", "-" | replace: "/", "-" | replace: ",", "" }}">
-              {{spec}}
-            </option>
-          {% endfor %}
-        </select>
-      </label>
-    </form>
-  </div>
+        {% endfor %}
+      </select>
+    </label>
+  </form>
 </section>
 <section class="wrapper faculty">
   {% for faculty_hash in site.data.faculty %}
